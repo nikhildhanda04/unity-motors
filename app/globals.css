@@ -1,26 +1,24 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Andenver";
+  src: url("/font/Andenver.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-primary: "Andenver", sans-serif;
+  --font-secondary: "Poppins", sans-serif;
+  --color-dark: #121212;
+  --color-light: #F0F0F0;
+  --color-primary: #FF9500;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+@custom-variant dark (&:where(.dark, .dark *));
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
