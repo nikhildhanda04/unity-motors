@@ -4,24 +4,24 @@ export const Hero = () => {
   return (
     <section id="home" className="relative w-full bg-white flex flex-col font-sans">
       
-      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32 lg:pb-48 flex flex-col lg:flex-row items-center lg:items-start z-10 space-y-16 lg:space-y-0">
+      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-20 pb-24 sm:pb-32 lg:pb-48 flex flex-col lg:flex-row items-center lg:items-start z-10 space-y-12 sm:space-y-16 lg:space-y-0">
         
-        <div className="w-full lg:w-[55%] pt-10 flex flex-col items-start text-left">
-          <p className="text-[#E43E3D] font-bold text-xs sm:text-sm tracking-widest uppercase mb-4">
+        <div className="w-full lg:w-[55%] pt-4 sm:pt-10 flex flex-col items-center lg:items-start text-center lg:text-left">
+          <p className="text-[#E43E3D] font-bold text-[10px] sm:text-xs md:text-sm tracking-widest uppercase mb-4">
             #1 Detailing Car Services in Karnal
           </p>
-          <h1 className="text-6xl sm:text-7xl xl:text-[90px] font-black text-[#111] leading-[0.85] uppercase tracking-tighter mb-8">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl xl:text-[90px] font-black text-[#111] leading-[0.85] uppercase tracking-tighter mb-6 sm:mb-8">
             Keep Your Car <br /> Clean Always
           </h1>
-          <p className="text-gray-600 text-lg max-w-md mb-10 leading-relaxed font-medium">
+          <p className="text-gray-600 text-base sm:text-lg max-w-md mb-8 sm:mb-10 leading-relaxed font-medium">
             Unity Motors is a brand which is literally going to change the people think car cleaning.
           </p>
-          <a href="#booking" className="bg-[#E43E3D] hover:bg-[#c93231] text-white font-bold py-4 px-8 rounded-full transition-colors uppercase tracking-wider text-sm shadow-xl shadow-red-500/20 inline-block text-center">
+          <a href="#booking" className="bg-[#E43E3D] hover:bg-[#c93231] text-white font-bold py-3.5 sm:py-4 px-6 sm:px-8 rounded-full transition-colors uppercase tracking-wider text-xs sm:text-sm shadow-xl shadow-red-500/20 inline-block text-center">
             Get An Appointment
           </a>
         </div>
 
-        <div className="w-full lg:w-[45%] relative flex lg:justify-end mt-16 lg:mt-0">
+        <div className="w-full lg:w-[45%] relative flex justify-center lg:justify-end mt-12 sm:mt-16 lg:mt-0">
        
           <div className="hidden lg:block absolute -top-5 right-0 w-48 h-48 bg-[#E43E3D] z-0"></div>
           

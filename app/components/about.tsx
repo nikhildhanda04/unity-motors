@@ -10,33 +10,33 @@ export const AboutSection = () => {
       </h2>
 
       {/* Center Image Fan (Polaroids) */}
-      <div className="relative w-full max-w-3xl h-[250px] sm:h-[400px] flex items-center justify-center mb-16 sm:mb-24 perspective-1000">
+      <div className="relative w-full max-w-4xl h-[300px] sm:h-[450px] flex items-center justify-center mb-16 sm:mb-24 perspective-1000">
         
         {/* Image 1 (Leftmost) */}
-        <div className="absolute w-[140px] h-[200px] sm:w-[220px] sm:h-[320px] bg-white p-2 pb-6 sm:pb-8 shadow-2xl -translate-x-[45%] sm:-translate-x-[60%] rotate-[-12deg] z-10 transition-transform duration-500 hover:rotate-[-5deg] hover:scale-110 hover:z-50 cursor-pointer">
+        <div className="absolute w-[160px] h-[230px] sm:w-[260px] sm:h-[360px] bg-white p-2 pb-6 sm:pb-8 shadow-2xl -translate-x-[65%] sm:-translate-x-[85%] rotate-[-15deg] z-10 transition-transform duration-500 hover:rotate-[-5deg] hover:scale-110 hover:z-50 cursor-pointer">
           <div className="relative w-full h-full bg-gray-200 overflow-hidden">
-            <Image src="/hero1.avif" alt="Car Detail 1" fill className="object-cover" />
+            <Image src="/about_part1.png" alt="Car Exterior Detail" fill className="object-cover" />
           </div>
         </div>
 
         {/* Image 2 (Mid-Left) */}
-        <div className="absolute w-[150px] h-[220px] sm:w-[240px] sm:h-[340px] bg-white p-2 pb-6 sm:pb-8 shadow-2xl -translate-x-[15%] sm:-translate-x-[20%] rotate-[-4deg] z-20 transition-transform duration-500 hover:rotate-0 hover:scale-110 hover:z-50 cursor-pointer">
+        <div className="absolute w-[170px] h-[250px] sm:w-[280px] sm:h-[380px] bg-white p-2 pb-6 sm:pb-8 shadow-2xl -translate-x-[25%] sm:-translate-x-[35%] rotate-[-6deg] z-20 transition-transform duration-500 hover:rotate-0 hover:scale-110 hover:z-50 cursor-pointer">
           <div className="relative w-full h-full bg-gray-200 overflow-hidden">
-             <Image src="/car.png" alt="Car Detail 2" fill className="object-cover" />
+             <Image src="/about_part2.png" alt="Car Wheel and Brake Detail" fill className="object-cover" />
           </div>
         </div>
 
         {/* Image 3 (Mid-Right) */}
-        <div className="absolute w-[150px] h-[220px] sm:w-[240px] sm:h-[340px] bg-white p-2 pb-6 sm:pb-8 shadow-2xl translate-x-[15%] sm:translate-x-[20%] rotate-[4deg] z-30 transition-transform duration-500 hover:rotate-0 hover:scale-110 hover:z-50 cursor-pointer">
+        <div className="absolute w-[170px] h-[250px] sm:w-[280px] sm:h-[380px] bg-white p-2 pb-6 sm:pb-8 shadow-2xl translate-x-[25%] sm:translate-x-[35%] rotate-[6deg] z-30 transition-transform duration-500 hover:rotate-0 hover:scale-110 hover:z-50 cursor-pointer">
           <div className="relative w-full h-full bg-gray-200 overflow-hidden">
-             <Image src="/carr.png" alt="Car Detail 3" fill className="object-cover" />
+             <Image src="/about_part3.png" alt="Car Interior Detail" fill className="object-cover" />
           </div>
         </div>
 
         {/* Image 4 (Rightmost) */}
-        <div className="absolute w-[140px] h-[200px] sm:w-[220px] sm:h-[320px] bg-white p-2 pb-6 sm:pb-8 shadow-2xl translate-x-[45%] sm:translate-x-[60%] rotate-[12deg] z-40 transition-transform duration-500 hover:rotate-[5deg] hover:scale-110 hover:z-50 cursor-pointer">
+        <div className="absolute w-[160px] h-[230px] sm:w-[260px] sm:h-[360px] bg-white p-2 pb-6 sm:pb-8 shadow-2xl translate-x-[65%] sm:translate-x-[85%] rotate-[15deg] z-40 transition-transform duration-500 hover:rotate-[5deg] hover:scale-110 hover:z-50 cursor-pointer">
           <div className="relative w-full h-full bg-gray-200 overflow-hidden">
-             <Image src="/hero2.avif" alt="Car Detail 4" fill className="object-cover" />
+             <Image src="/about_part4.png" alt="Car Engine Detail" fill className="object-cover" />
           </div>
         </div>
         
