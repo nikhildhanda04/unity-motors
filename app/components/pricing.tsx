@@ -25,7 +25,7 @@ export const PricingSection = () => {
           {/* Card 1 */}
           <div className="flex-1 bg-white p-10 flex flex-col">
             <h3 className="text-5xl sm:text-6xl font-black text-[#E43E3D] tracking-tighter mb-4">
-              <span className="text-3xl sm:text-4xl align-top mr-1">$</span>4000
+              <span className="text-3xl sm:text-4xl align-top mr-1">₹</span>4000
             </h3>
             <h4 className="text-2xl sm:text-3xl font-black text-[#111] uppercase tracking-tighter mb-4">
               Exterior Interior Revive
@@ -41,7 +41,7 @@ export const PricingSection = () => {
           {/* Card 2 (Highlighted) */}
           <div className="flex-1 bg-[#E43E3D] p-10 flex flex-col relative z-10 md:scale-105 shadow-2xl">
             <h3 className="text-5xl sm:text-6xl font-black text-white tracking-tighter mb-4">
-              <span className="text-3xl sm:text-4xl align-top mr-1">$</span>20k
+              <span className="text-3xl sm:text-4xl align-top mr-1">₹</span>20k
             </h3>
             <h4 className="text-2xl sm:text-3xl font-black text-white uppercase tracking-tighter mb-4">
               Ceramic 3M
@@ -57,7 +57,7 @@ export const PricingSection = () => {
           {/* Card 3 */}
           <div className="flex-1 bg-white p-10 flex flex-col">
             <h3 className="text-5xl sm:text-6xl font-black text-[#E43E3D] tracking-tighter mb-4">
-              <span className="text-3xl sm:text-4xl align-top mr-1">$</span>20k
+              <span className="text-3xl sm:text-4xl align-top mr-1">₹</span>20k
             </h3>
             <h4 className="text-2xl sm:text-3xl font-black text-[#111] uppercase tracking-tighter mb-4">
               20L Polish
