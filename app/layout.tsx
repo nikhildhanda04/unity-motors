@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   description: "Experience Karnal's best car detailing service. At Unity Motors, we provide premium car wash, ceramic coating, paint protection, and deep cleaning services.",
   keywords: ["car detailing", "car wash Karnal", "ceramic coating Karnal", "paint protection", "auto detailing", "Unity Motors"],
   authors: [{ name: "Unity Motors" }],
+  icons: {
+    icon: "/favicon.ico",
+  },
   openGraph: {
     title: "Unity Motors - Premier Car Detailing in Karnal",
     description: "Experience Karnal's best car detailing service. At Unity Motors, we provide premium car wash, ceramic coating, paint protection, and deep cleaning services.",
@@ -21,7 +24,7 @@ export const metadata: Metadata = {
     siteName: "Unity Motors",
     images: [
       {
-        url: "/hero_bg_unity.png", // Assuming this is present in the public folder and acts as a good OG image
+        url: "/hero_bg_unity.png", 
         width: 1200,
         height: 630,
         alt: "Unity Motors Car Detailing",

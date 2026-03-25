@@ -2,15 +2,15 @@ import Image from "next/image";
 
 export const Hero = () => {
   return (
-    <section id="home" className="relative w-full bg-white flex flex-col font-sans">
+    <section id="home" className="relative w-full bg-[black] flex flex-col font-sans">
       
-      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-20 pb-24 sm:pb-32 lg:pb-48 flex flex-col lg:flex-row items-center lg:items-start z-10 space-y-12 sm:space-y-16 lg:space-y-0">
+      <div className="relative w-full max-w-7xl mx-auto gap-12 px-4 sm:px-6 lg:px-8 pt-12 sm:pt-20 pb-24 sm:pb-32 lg:pb-48 flex flex-col lg:flex-row items-center lg:items-start z-10 space-y-12 sm:space-y-16 lg:space-y-0">
         
         <div className="w-full lg:w-[55%] pt-4 sm:pt-10 flex flex-col items-center lg:items-start text-center lg:text-left">
           <p className="text-[#E43E3D] font-bold text-[10px] sm:text-xs md:text-sm tracking-widest uppercase mb-4">
             #1 Detailing Car Services in Karnal
           </p>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl xl:text-[90px] font-black text-[#111] leading-[0.85] uppercase tracking-tighter mb-6 sm:mb-8">
+          <h1 className="text-5xl sm:text-6xl md:text-xl xl:text-[80px] font-black text-white leading-[0.85] uppercase tracking-tighter mb-6 sm:mb-8">
             Keep Your Car <br /> Clean Always
           </h1>
           <p className="text-gray-600 text-base sm:text-lg max-w-md mb-8 sm:mb-10 leading-relaxed font-medium">
@@ -25,11 +25,11 @@ export const Hero = () => {
        
           <div className="hidden lg:block absolute -top-5 right-0 w-48 h-48 bg-[#E43E3D] z-0"></div>
           
-          <div className="relative z-10 flex flex-col w-full max-w-md bg-white shadow-[0_30px_60px_rgba(0,0,0,0.2)] lg:-mr-4 xl:mr-0">
+          <div className="relative z-10 flex flex-col w-full max-w-2xl bg-[#111] shadow-[0_30px_60px_rgba(0,0,0,0.8)] lg:-mr-4 xl:mr-0">
          
             <div className="relative w-full h-70 sm:h-87.5 bg-gray-200">
                <Image
-                src="/carr.png"
+                src="/unity-motors.png"
                 alt="Car Wash Detail"
                 fill
                 className="object-cover"
@@ -46,9 +46,9 @@ export const Hero = () => {
                   Your car deserves more than a wash &mdash; it deserves a transformation. Experience Karnal&apos;s best car detailing service today.
                 </p>
               </div>
-              <a href="#about" className="uppercase tracking-widest font-bold text-xs hover:text-red-200 transition-colors">
+              {/* <a href="#about" className="uppercase tracking-widest font-bold text-xs hover:text-red-200 transition-colors">
                 Learn More About Us
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

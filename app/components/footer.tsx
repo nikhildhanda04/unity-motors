@@ -19,9 +19,9 @@ export const FooterSection = () => {
             <a href="#booking" className="bg-[#E43E3D] hover:bg-[#c93231] text-white font-black text-xs sm:text-sm uppercase tracking-widest py-4 px-8 rounded-full transition-colors shadow-lg shadow-red-500/20 inline-block text-center">
               Get An Appointment
             </a>
-            <a href="#booking" className="bg-transparent border border-white text-white hover:bg-white hover:text-black font-black text-xs sm:text-sm uppercase tracking-widest py-4 px-8 rounded-full transition-colors inline-block text-center">
+            {/* <a href="#booking" className="bg-transparent border border-white text-white hover:bg-white hover:text-black font-black text-xs sm:text-sm uppercase tracking-widest py-4 px-8 rounded-full transition-colors inline-block text-center">
               Talk To Support Team
-            </a>
+            </a> */}
           </div>
         </div>
 
