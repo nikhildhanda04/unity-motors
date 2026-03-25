@@ -55,6 +55,7 @@ export const FooterSection = () => {
               <h4 className="text-[#E43E3D] font-black text-lg uppercase tracking-wider mb-6">Phone</h4>
               <ul className="flex flex-col gap-4 text-gray-300 font-medium text-sm">
                 <li><a href="tel:+917710777775" className="hover:text-white transition-colors">+91 7710777775</a></li>
+                 <li><a href="tel:+919306595865" className="hover:text-white transition-colors">+91 9306595865</a></li>
               </ul>
             </div>
           </div>
