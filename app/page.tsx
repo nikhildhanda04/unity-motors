@@ -8,19 +8,43 @@ import PricingSection from "./components/pricing";
 import BookingSection from "./components/booking";
 import LocationSection from "./components/location";
 import FooterSection from "./components/footer";
+import { FadeIn } from "./components/scroll-anim";
+import ShopTeaserSection from "./components/shop-teaser";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#0a0f12]">
       <Navbar />
-      <Hero />
-      <AboutSection />
+      <FadeIn>
+        <Hero />
+      </FadeIn>
+      <FadeIn delay={0.1}>
+        <AboutSection />
+      </FadeIn>
+      <FadeIn delay={0.1}>
+        <VisionSection />
+      </FadeIn>
+      
       <ServicesList />
-      <StatsSection />
-      <PricingSection />
-      <VisionSection />
-      <BookingSection />
-      <LocationSection />
+      
+      
+      <FadeIn delay={0.1}>
+        <StatsSection />
+      </FadeIn>
+      <FadeIn delay={0.1}>
+        <PricingSection />
+      </FadeIn>
+            <FadeIn delay={0.1}>
+        <ShopTeaserSection />
+      </FadeIn>
+
+      <FadeIn delay={0.1}>
+        <BookingSection />
+      </FadeIn>
+
+      <FadeIn delay={0.1}>
+        <LocationSection />
+      </FadeIn>
       <FooterSection />
     </main>
   );
