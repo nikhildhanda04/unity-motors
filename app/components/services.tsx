@@ -24,7 +24,7 @@ const serviceCategories = [
   {
     category: "Engine",
     description: "Performance upgrades and engine maintenance for maximum power and reliability.",
-    image: "/8.JPG",
+    image: "/5.jpg",
     services: [
       "Service",
       "Deep clog clean",
@@ -39,7 +39,7 @@ const serviceCategories = [
   {
     category: "Exclusive",
     description: "Custom 3D printing solutions for rare and expensive parts.",
-    image: "/7.JPG",
+    image: "/7.jpg",
     services: [
       "3D Printing OEM",
       "No more expensive German OEM parts. Make your own - come to our office and tell us the part description."
