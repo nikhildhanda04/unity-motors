@@ -15,6 +15,7 @@
 @theme inline {
   --font-primary: "Andenver", sans-serif;
   --font-secondary: "Poppins", sans-serif;
+  --font-inter: "Inter", sans-serif;
   --color-dark: #121212;
   --color-light: #F0F0F0;
   --color-primary: #FF9500;

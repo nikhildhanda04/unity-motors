@@ -5,9 +5,11 @@ const serviceCategories = [
   {
     category: "Detailing",
     description: "Premium detailing services to make your car look brand new, inside and out.",
-    image: "/car_detailing.png",
+    image: "/9.jpg",
     services: [
       "Normal car wash",
+      "All type of Skirting ",
+      "Denting & Painting",
       "Deep car wash (includes degreaser)",
       "Semi ceramic",
       "Ceramic (T-Gloss, 3M, Wave X)",
@@ -22,7 +24,7 @@ const serviceCategories = [
   {
     category: "Engine",
     description: "Performance upgrades and engine maintenance for maximum power and reliability.",
-    image: "/engine_performance.png",
+    image: "/8.JPG",
     services: [
       "Service",
       "Deep clog clean",
@@ -37,7 +39,7 @@ const serviceCategories = [
   {
     category: "Exclusive",
     description: "Custom 3D printing solutions for rare and expensive parts.",
-    image: "/exclusive_parts.png",
+    image: "/7.JPG",
     services: [
       "3D Printing OEM",
       "No more expensive German OEM parts. Make your own - come to our office and tell us the part description."

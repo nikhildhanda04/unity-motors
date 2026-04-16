@@ -10,7 +10,7 @@ export const BookingSection = () => {
       {/* Background with Slow Pan */}
       <div className="absolute inset-0 w-full h-full z-0">
         <Image
-          src="/booking_bg.png" 
+          src="/1.JPG" 
           alt="Cinematic car windshield background"
           fill
           className="object-cover animate-slow-pan opacity-60"

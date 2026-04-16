@@ -8,7 +8,7 @@ export const Hero = () => {
         
         <div className="w-full lg:w-[55%] pt-4 sm:pt-10 flex flex-col items-center lg:items-start text-center lg:text-left">
           <p className="text-[#E43E3D] font-bold text-[10px] sm:text-xs md:text-sm tracking-widest uppercase mb-4">
-            #1 Detailing Car Services in Karnal
+            All in one stop shop for your car
           </p>
           <h1 className="text-5xl sm:text-6xl md:text-xl xl:text-[80px] font-black text-white leading-[0.85] uppercase tracking-tighter mb-6 sm:mb-8">
             Keep Your Car <br /> Clean Always

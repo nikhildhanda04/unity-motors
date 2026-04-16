@@ -8,7 +8,7 @@ export const StatsSection = () => {
       <div className="absolute inset-0 w-full h-full z-0 opacity-50">
         {/* Placeholder image that looks like a still from a detailed car video */}
         <Image
-          src="/stats_bg.png" 
+          src="/10.png" 
           alt="Car Detailed Video Background Placeholder"
           fill
           className="object-cover animate-slow-pan"

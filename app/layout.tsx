@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
 import { SmoothScrolling } from "./components/smooth-scrolling";
 
 const poppins = Poppins({
   variable: "--font-poppins",
-  weight: "400",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
 });
 
+const inter = Inter({
+  variable: "--font-inter",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+})
 
 export const metadata: Metadata = {
   title: "Unity Motors - Premier Car Detailing in Karnal",
@@ -53,7 +58,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} antialiased`} suppressHydrationWarning>
+      <body className={`${poppins.variable} ${inter.variable} antialiased`} suppressHydrationWarning>
         <SmoothScrolling>
           {children}
         </SmoothScrolling>

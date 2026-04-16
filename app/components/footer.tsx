@@ -47,7 +47,7 @@ export const FooterSection = () => {
             <div>
               <h4 className="text-[#E43E3D] font-black text-lg uppercase tracking-wider mb-6">Karnal Office</h4>
               <p className="text-gray-300 font-medium text-sm leading-relaxed max-w-62.5">
-                Karnal,<br/>Karnal 132001
+              Unity motors, near nishan public school, Karnal, Niawal, Haryana 132001, India<br/>
               </p>
             </div>
          
@@ -55,7 +55,7 @@ export const FooterSection = () => {
               <h4 className="text-[#E43E3D] font-black text-lg uppercase tracking-wider mb-6">Phone</h4>
               <ul className="flex flex-col gap-4 text-gray-300 font-medium text-sm">
                 <li><a href="tel:+917710777775" className="hover:text-white transition-colors">+91 7710777775</a></li>
-                 <li><a href="tel:+919306595865" className="hover:text-white transition-colors">+91 9306595865</a></li>
+                 {/* <li><a href="tel:+919306595865" className="hover:text-white transition-colors">+91 9306595865</a></li> */}
               </ul>
             </div>
           </div>
