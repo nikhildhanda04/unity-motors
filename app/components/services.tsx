@@ -24,7 +24,7 @@ const serviceCategories = [
   {
     category: "Engine",
     description: "Performance upgrades and engine maintenance for maximum power and reliability.",
-    image: "/5.jpg",
+    image: "/5.JPG",
     services: [
       "Service",
       "Deep clog clean",
