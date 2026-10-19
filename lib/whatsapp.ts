@@ -2,7 +2,7 @@ import type { Car } from "./types";
 import { formatPrice } from "./types";
 
 const siteUrl = () =>
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://unitymotors.in";
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://unitymotor.in";
 
 /**
  * Click-to-chat link. No server, no session, no API — WhatsApp opens with the

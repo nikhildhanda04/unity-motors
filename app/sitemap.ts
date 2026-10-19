@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 import { getCars } from '@/lib/cars'
 
-const SITE = 'https://unitymotors.in'
+const SITE = 'https://unitymotor.in'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Never let a blob/network hiccup fail the whole sitemap build.

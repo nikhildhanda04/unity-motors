@@ -17,7 +17,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   // Without this, car openGraph images resolve against localhost.
-  metadataBase: new URL("https://unitymotors.in"),
+  metadataBase: new URL("https://unitymotor.in"),
   title: "Unity Motors - Premier Car Detailing in Karnal",
   description: "Experience Karnal's best car detailing service. At Unity Motors, we provide premium car wash, ceramic coating, paint protection, and deep cleaning services.",
   keywords: ["car detailing", "car wash Karnal", "ceramic coating Karnal", "paint protection", "auto detailing", "Unity Motors"],
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Unity Motors - Premier Car Detailing in Karnal",
     description: "Experience Karnal's best car detailing service. At Unity Motors, we provide premium car wash, ceramic coating, paint protection, and deep cleaning services.",
-    url: "https://unitymotors.in",
+    url: "https://unitymotor.in",
     siteName: "Unity Motors",
     images: [
       {
