@@ -17,11 +17,11 @@ import {
 } from "@/lib/types";
 
 const input =
-  "w-full bg-[#0a0f12] border border-[#23292d] px-4 py-3 text-[15px] text-white placeholder:text-gray-400 focus:outline-none focus:border-[#E43E3D] transition-colors";
+  "w-full bg-[#0a0f12] border border-[#23292d] px-4 py-3.5 text-[15px] text-white placeholder:text-gray-400 focus:border-[#E43E3D] transition-[border-color] duration-200";
 const label =
-  "text-gray-400 text-[11px] font-bold uppercase tracking-[0.18em] mb-2 block";
-const panel = "bg-[#0e1316] border border-[#1b2126] p-5 sm:p-7";
-const heading = "text-white font-bold text-[15px] mb-5";
+  "text-gray-400 text-[11px] font-bold uppercase tracking-[0.18em] mb-2.5 block";
+const panel = "bg-[#0e1316] border border-[#1b2126] p-6 sm:p-8";
+const heading = "text-white font-bold text-[15px] mb-6";
 
 export default function CarForm({ car }: { car: Car | null }) {
   const [state, formAction, pending] = useActionState<SaveState, FormData>(
@@ -105,7 +105,7 @@ export default function CarForm({ car }: { car: Car | null }) {
       <section className={panel}>
         <h2 className={heading}>Details</h2>
 
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-6">
           <div>
             <label className={label} htmlFor="title">
               Title *
@@ -120,7 +120,7 @@ export default function CarForm({ car }: { car: Car | null }) {
             />
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-5">
+          <div className="grid sm:grid-cols-2 gap-6">
             <div>
               <label className={label} htmlFor="price">
                 Price (₹)
@@ -138,30 +138,6 @@ export default function CarForm({ car }: { car: Car | null }) {
                 placeholder="5450000"
                 className={`${input} disabled:opacity-40`}
               />
-              <label className="inline-flex items-center gap-2.5 mt-3 py-2 text-gray-400 text-[13px] cursor-pointer">
-                <input
-                  type="checkbox"
-                  name="priceOnRequest"
-                  defaultChecked={car?.priceOnRequest}
-                  onChange={(e) => setOnRequest(e.target.checked)}
-                  className="accent-[#E43E3D] w-5 h-5"
-                />
-                Price on request
-              </label>
-              {/*
-                Ticked by default on a NEW car (`car` is null), because the
-                workshop arranges finance on everything unless told otherwise.
-                An existing car keeps whatever was saved.
-              */}
-              <label className="inline-flex items-center gap-2.5 py-2 text-gray-400 text-[13px] cursor-pointer">
-                <input
-                  type="checkbox"
-                  name="loanAvailable"
-                  defaultChecked={car ? car.loanAvailable : true}
-                  className="accent-[#E43E3D] w-5 h-5"
-                />
-                Loan facility available
-              </label>
             </div>
 
             <div>
@@ -181,7 +157,39 @@ export default function CarForm({ car }: { car: Car | null }) {
             </div>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {/*
+            Both price terms share a full-width row. They used to be stacked
+            inside the half-width price column, where the two inline-flex
+            labels butted against each other with no gap at all.
+          */}
+          <div className="flex flex-wrap items-center gap-x-8 gap-y-1">
+            <label className="inline-flex items-center gap-3 py-2 text-gray-300 text-[13px] cursor-pointer">
+              <input
+                type="checkbox"
+                name="priceOnRequest"
+                defaultChecked={car?.priceOnRequest}
+                onChange={(e) => setOnRequest(e.target.checked)}
+                className="accent-[#E43E3D] w-[18px] h-[18px]"
+              />
+              Price on request
+            </label>
+            {/*
+              Ticked by default on a NEW car (`car` is null), because the
+              workshop arranges finance on everything unless told otherwise.
+              An existing car keeps whatever was saved.
+            */}
+            <label className="inline-flex items-center gap-3 py-2 text-gray-300 text-[13px] cursor-pointer">
+              <input
+                type="checkbox"
+                name="loanAvailable"
+                defaultChecked={car ? car.loanAvailable : true}
+                className="accent-[#E43E3D] w-[18px] h-[18px]"
+              />
+              Loan facility available
+            </label>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div>
               <label className={label} htmlFor="year">
                 Year
