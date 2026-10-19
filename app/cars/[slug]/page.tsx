@@ -58,6 +58,7 @@ export default async function CarDetailPage({
     { label: "Fuel", value: car.fuelType || null },
     { label: "Transmission", value: car.transmission || null },
     { label: "Ownership", value: car.ownership || null },
+    { label: "Registered", value: car.stateRegistered || null },
   ].filter((s) => s.value);
 
   const others = (await getCars())
@@ -166,6 +167,15 @@ export default async function CarDetailPage({
                   >
                     {price}
                   </p>
+
+                  {/* Finance sits with the price because that is where it
+                      changes the decision, not in the spec list. */}
+                  {car.loanAvailable && (
+                    <p className="mt-3 flex items-center gap-2 text-[#E43E3D] text-[11px] font-bold uppercase tracking-[0.18em]">
+                      <Check className="w-3.5 h-3.5 shrink-0" />
+                      Loan facility available
+                    </p>
+                  )}
 
                   {/*
                     The whole enquiry feature: a wa.me link. WhatsApp opens with

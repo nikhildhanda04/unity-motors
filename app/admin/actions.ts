@@ -134,6 +134,10 @@ export async function saveCar(
     fuelType: String(formData.get("fuelType") ?? ""),
     transmission: String(formData.get("transmission") ?? ""),
     ownership: String(formData.get("ownership") ?? ""),
+    stateRegistered: String(formData.get("stateRegistered") ?? ""),
+    // An unticked checkbox submits nothing at all, so absence means false.
+    // The form decides the default; this only records what was submitted.
+    loanAvailable: formData.get("loanAvailable") === "on",
     description: String(formData.get("description") ?? "").trim(),
     features,
     images,

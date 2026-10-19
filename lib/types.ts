@@ -11,6 +11,8 @@ export type Car = {
   fuelType: string;
   transmission: string;
   ownership: string;
+  stateRegistered: string;
+  loanAvailable: boolean;
   description: string;
   features: string[];
   images: Media[];
@@ -23,6 +25,50 @@ export type Car = {
 export const FUEL_TYPES = ["Petrol", "Diesel", "Electric", "Hybrid", "CNG"];
 export const TRANSMISSIONS = ["Automatic", "Manual"];
 export const OWNERSHIPS = ["1st Owner", "2nd Owner", "3rd Owner", "4th Owner+"];
+
+/**
+ * RTO registration states. A fixed list rather than free text so the spec
+ * line never shows "haryana", "Haryana" and "HR" as three different values.
+ * Neighbours of the Karnal workshop lead; the rest follow alphabetically.
+ */
+export const REGISTRATION_STATES = [
+  "Haryana",
+  "Delhi",
+  "Punjab",
+  "Chandigarh",
+  "Uttar Pradesh",
+  "Uttarakhand",
+  "Himachal Pradesh",
+  "Rajasthan",
+  "Andaman and Nicobar Islands",
+  "Andhra Pradesh",
+  "Arunachal Pradesh",
+  "Assam",
+  "Bihar",
+  "Chhattisgarh",
+  "Dadra and Nagar Haveli and Daman and Diu",
+  "Goa",
+  "Gujarat",
+  "Jammu and Kashmir",
+  "Jharkhand",
+  "Karnataka",
+  "Kerala",
+  "Ladakh",
+  "Lakshadweep",
+  "Madhya Pradesh",
+  "Maharashtra",
+  "Manipur",
+  "Meghalaya",
+  "Mizoram",
+  "Nagaland",
+  "Odisha",
+  "Puducherry",
+  "Sikkim",
+  "Tamil Nadu",
+  "Telangana",
+  "Tripura",
+  "West Bengal",
+];
 
 /** Indian grouping: 5450000 -> "54,50,000" */
 export const formatPrice = (n: number) => new Intl.NumberFormat("en-IN").format(n);

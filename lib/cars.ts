@@ -18,6 +18,8 @@ type Row = {
   fuelType: string;
   transmission: string;
   ownership: string;
+  stateRegistered: string;
+  loanAvailable: boolean;
   description: string;
   features: string[];
   images: unknown;

@@ -32,6 +32,8 @@ const cars = [
     fuelType: "Petrol",
     transmission: "Automatic",
     ownership: "1st Owner",
+    stateRegistered: "Haryana",
+    loanAvailable: true,
     description:
       "Came to us for a full ceramic treatment and stayed. Paint corrected over two stages, PPF on the front end, fluids and brakes done in-house.\n\nCarbon bucket seats, Harman Kardon, no accident history.",
     features: [
@@ -54,6 +56,8 @@ const cars = [
     fuelType: "Petrol",
     transmission: "Automatic",
     ownership: "1st Owner",
+    stateRegistered: "Delhi",
+    loanAvailable: true,
     description:
       "Single owner, serviced with us since new. Full detail and interior deep clean completed before listing.",
     features: [
@@ -75,6 +79,8 @@ const cars = [
     fuelType: "Diesel",
     transmission: "Automatic",
     ownership: "2nd Owner",
+    stateRegistered: "Punjab",
+    loanAvailable: false,
     description:
       "Honest car, higher mileage, priced accordingly. Suspension bushes and brakes replaced on arrival.",
     features: ["Suspension refreshed", "New brakes", "Burmester audio", "Sunroof"],

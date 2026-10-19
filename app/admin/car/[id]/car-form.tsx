@@ -10,6 +10,7 @@ import { ArrowLeft, ArrowRight, Close, Plus } from "../../../components/icons";
 import {
   FUEL_TYPES,
   OWNERSHIPS,
+  REGISTRATION_STATES,
   TRANSMISSIONS,
   type Car,
   type Media,
@@ -147,6 +148,20 @@ export default function CarForm({ car }: { car: Car | null }) {
                 />
                 Price on request
               </label>
+              {/*
+                Ticked by default on a NEW car (`car` is null), because the
+                workshop arranges finance on everything unless told otherwise.
+                An existing car keeps whatever was saved.
+              */}
+              <label className="inline-flex items-center gap-2.5 py-2 text-gray-400 text-[13px] cursor-pointer">
+                <input
+                  type="checkbox"
+                  name="loanAvailable"
+                  defaultChecked={car ? car.loanAvailable : true}
+                  className="accent-[#E43E3D] w-5 h-5"
+                />
+                Loan facility available
+              </label>
             </div>
 
             <div>
@@ -246,6 +261,24 @@ export default function CarForm({ car }: { car: Car | null }) {
                 {OWNERSHIPS.map((o) => (
                   <option key={o} value={o}>
                     {o}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label className={label} htmlFor="stateRegistered">
+                Registered in
+              </label>
+              <select
+                id="stateRegistered"
+                name="stateRegistered"
+                defaultValue={car?.stateRegistered ?? ""}
+                className={input}
+              >
+                <option value="">—</option>
+                {REGISTRATION_STATES.map((s) => (
+                  <option key={s} value={s}>
+                    {s}
                   </option>
                 ))}
               </select>

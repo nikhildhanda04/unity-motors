@@ -19,6 +19,12 @@ model Car {
   fuelType       String   @default("")
   transmission   String   @default("")
   ownership      String   @default("")
+  // The RTO state a car is registered in — it decides transfer paperwork and
+  // road tax, so buyers filter on it.
+  stateRegistered String  @default("")
+  // Defaults true: the workshop arranges finance on everything unless told
+  // otherwise, so the admin checkbox starts ticked.
+  loanAvailable  Boolean  @default(true)
   description    String   @default("")
   features       String[]
   images         Json     @default("[]")

@@ -104,6 +104,14 @@ export default function CarEntry({ car, index }: { car: Car; index: number }) {
           {specs.length > 0 && (
             <p className="tnum mt-2 text-[13px] font-medium text-gray-400">
               {specs.join("  ·  ")}
+              {/* The registration state is the fifth spec, which wraps this
+                  line to three ragged lines at 360px. It stays on the detail
+                  page's spec list below sm, where there is room for it. */}
+              {car.stateRegistered && (
+                <span className="hidden sm:inline">
+                  {`  ·  ${car.stateRegistered}`}
+                </span>
+              )}
             </p>
           )}
         </div>
