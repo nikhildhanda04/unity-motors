@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  // Prisma 7: the URL lives in prisma.config.ts, not here.
+}
+
+model Car {
+  id             String   @id @default(uuid())
+  slug           String   @unique
+  title          String
+  price          Int      @default(0)
+  priceOnRequest Boolean  @default(false)
+  year           Int      @default(0)
+  kmDriven       Int      @default(0)
+  fuelType       String   @default("")
+  transmission   String   @default("")
+  ownership      String   @default("")
+  description    String   @default("")
+  features       String[]
+  images         Json     @default("[]")
+  video          Json?
+  sold           Boolean  @default(false)
+  featured       Boolean  @default(false)
+  createdAt      DateTime @default(now())
+
+  // Listings are always "unsold first, newest first".
+  @@index([sold, createdAt])
+  @@map("cars")
+}

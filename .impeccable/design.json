@@ -1,0 +1,458 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-18T00:00:00Z",
+  "title": "Design System: Unity Motors",
+  "extensions": {
+    "colorMeta": {
+      "signal": {
+        "role": "primary",
+        "displayName": "Workshop Red",
+        "canonical": "#E43E3D",
+        "tonalRamp": [
+          "#2b0d0d",
+          "#4d1615",
+          "#70201f",
+          "#A32A29",
+          "#c7322f",
+          "#E43E3D",
+          "#ef7574",
+          "#fbc9c8"
+        ]
+      },
+      "signal-hover": {
+        "role": "primary",
+        "displayName": "Red Pressed",
+        "canonical": "#c7322f",
+        "tonalRamp": [
+          "#260a09",
+          "#431110",
+          "#651a18",
+          "#8a2422",
+          "#c7322f",
+          "#dc5451",
+          "#ea918f",
+          "#f8cfce"
+        ]
+      },
+      "signal-deep": {
+        "role": "primary",
+        "displayName": "Red Deep",
+        "canonical": "#A32A29",
+        "tonalRamp": [
+          "#1f0808",
+          "#390e0d",
+          "#561614",
+          "#751e1c",
+          "#A32A29",
+          "#cc4b49",
+          "#e08c8a",
+          "#f4cdcc"
+        ]
+      },
+      "signal-tint": {
+        "role": "primary",
+        "displayName": "Red Tint",
+        "canonical": "#ff8a89",
+        "tonalRamp": [
+          "#2e1211",
+          "#4f1e1d",
+          "#702b29",
+          "#954038",
+          "#c45f5c",
+          "#ff8a89",
+          "#ffb3b2",
+          "#ffdedd"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Register Black",
+        "canonical": "#0a0f12",
+        "tonalRamp": [
+          "#05080a",
+          "#0a0f12",
+          "#111920",
+          "#1b2630",
+          "#2a3843",
+          "#46545f",
+          "#7b8891",
+          "#c3cbd1"
+        ]
+      },
+      "panel": {
+        "role": "neutral",
+        "displayName": "Panel Black",
+        "canonical": "#111111",
+        "tonalRamp": [
+          "#060606",
+          "#111111",
+          "#1c1c1c",
+          "#2a2a2a",
+          "#3d3d3d",
+          "#5c5c5c",
+          "#8c8c8c",
+          "#cccccc"
+        ]
+      },
+      "panel-admin": {
+        "role": "neutral",
+        "displayName": "Operate Panel",
+        "canonical": "#0e1316",
+        "tonalRamp": [
+          "#070a0c",
+          "#0e1316",
+          "#161d21",
+          "#222c32",
+          "#334049",
+          "#4f5f6a",
+          "#85939c",
+          "#c7ced3"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#23292d",
+        "tonalRamp": [
+          "#0b0d0f",
+          "#14181a",
+          "#1c2125",
+          "#23292d",
+          "#39424a",
+          "#55626c",
+          "#8a959d",
+          "#c8ced3"
+        ]
+      },
+      "hairline-admin": {
+        "role": "neutral",
+        "displayName": "Operate Hairline",
+        "canonical": "#1b2126",
+        "tonalRamp": [
+          "#090b0d",
+          "#111518",
+          "#151a1e",
+          "#1b2126",
+          "#2c353c",
+          "#475359",
+          "#808d95",
+          "#c4cbd0"
+        ]
+      },
+      "text-primary": {
+        "role": "neutral",
+        "displayName": "Paper White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#1a1a1a",
+          "#333333",
+          "#4d4d4d",
+          "#737373",
+          "#999999",
+          "#c4c4c4",
+          "#e6e6e6",
+          "#ffffff"
+        ]
+      },
+      "text-secondary": {
+        "role": "neutral",
+        "displayName": "Quiet Grey",
+        "canonical": "#d1d5db",
+        "tonalRamp": [
+          "#1f2227",
+          "#2f343a",
+          "#434952",
+          "#5b636d",
+          "#767e89",
+          "#9ca3af",
+          "#d1d5db",
+          "#f1f3f5"
+        ]
+      },
+      "text-muted": {
+        "role": "neutral",
+        "displayName": "Register Grey",
+        "canonical": "#9ca3af",
+        "tonalRamp": [
+          "#1d2025",
+          "#2c3037",
+          "#3f454e",
+          "#565d67",
+          "#6f7782",
+          "#9ca3af",
+          "#c5cad2",
+          "#eef0f3"
+        ]
+      },
+      "rule-numeral": {
+        "role": "neutral",
+        "displayName": "Rule Numeral",
+        "canonical": "#6b767f",
+        "tonalRamp": [
+          "#14171a",
+          "#1f2428",
+          "#2e353a",
+          "#414a51",
+          "#55606a",
+          "#6b767f",
+          "#9aa3aa",
+          "#d2d7db"
+        ]
+      },
+      "status-live": {
+        "role": "tertiary",
+        "displayName": "Live Green",
+        "canonical": "#34d399",
+        "tonalRamp": [
+          "#04241a",
+          "#063d2b",
+          "#08563d",
+          "#0b7052",
+          "#12a075",
+          "#34d399",
+          "#7bdfbb",
+          "#c7f2e2"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page mastheads only \u2014 STOCK, Cars For Sale, the login wordmark. Never on /admin dashboard surfaces."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "The car title inside a register entry, and closing calls to action."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Subsection headings on the detail page."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Descriptive copy, capped at 68ch, always at the grey floor or lighter."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Spec labels, the preparation line, back-links, column heads. 10px / 0.2em for column heads and badges."
+      },
+      "operate-title": {
+        "displayName": "Operate Title",
+        "purpose": "Admin row car title. Sentence case, no display weight, no tracking."
+      },
+      "operate-spec": {
+        "displayName": "Operate Spec",
+        "purpose": "Admin price-plus-specs line, tabular."
+      }
+    },
+    "shadows": [
+      {
+        "name": "panel-drop",
+        "value": "0 30px 60px rgba(0,0,0,0.8)",
+        "purpose": "The only elevation step. Gallery frame, video player and poster, price block. Nothing else."
+      }
+    ],
+    "motion": [
+      {
+        "name": "entry-rise",
+        "value": "entry-rise 0.62s cubic-bezier(0.16, 1, 0.3, 1) both",
+        "purpose": "The one authored animation: a register entry arriving. From an already-visible default; disabled under prefers-reduced-motion. Staggered index x 70ms, capped at 6."
+      },
+      {
+        "name": "ease-register",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Exponential ease-out; the system's only authored easing curve."
+      },
+      {
+        "name": "hover-photo",
+        "value": "transition-[transform,filter] 900ms ease-out",
+        "purpose": "Register crop resolving from greyscale to full colour at scale 1.04."
+      },
+      {
+        "name": "hover-rule",
+        "value": "transition-[width] 700ms ease-out",
+        "purpose": "The red bar growing along a register entry's top hairline."
+      },
+      {
+        "name": "state-colour",
+        "value": "transition-colors 200ms",
+        "purpose": "Default for button, link and border state changes. No transform, no lift."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Enquiry Button",
+      "kind": "button",
+      "refersTo": "button-signal",
+      "description": "The one public action: opens WhatsApp with the car already named.",
+      "html": "<a class=\"ds-btn-signal\" href=\"#\"><svg viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\" width=\"20\" height=\"20\"><path d=\"M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.82 9.82 0 0 1 6.988 2.896 9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.886-9.885 9.886m8.413-18.297A11.8 11.8 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.9 11.9 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413Z\"/></svg>Enquire on WhatsApp</a>",
+      "css": ".ds-btn-signal { display: inline-flex; align-items: center; justify-content: center; gap: 12px; background: var(--signal, #E43E3D); color: #fff; font-family: Poppins, sans-serif; font-weight: 900; font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; text-decoration: none; padding: 16px 32px; border: none; border-radius: 0; transition: background-color 0.2s; } .ds-btn-signal:hover { background: #c7322f; } .ds-btn-signal:focus-visible { outline: 2px solid var(--signal, #E43E3D); outline-offset: 2px; border-radius: 0; }"
+    },
+    {
+      "name": "Operate Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost-operate",
+      "description": "Admin row control. Quiet at rest, fills a half-step panel on hover.",
+      "html": "<button class=\"ds-btn-ghost-operate\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" aria-hidden=\"true\" width=\"14\" height=\"14\"><path d=\"M4 20h4L19 9l-4-4L4 16v4zM14 6l4 4\"/></svg>Edit</button>",
+      "css": ".ds-btn-ghost-operate { display: inline-flex; align-items: center; gap: 6px; background: transparent; color: #9ca3af; font-family: Poppins, sans-serif; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; padding: 6px 10px; border: none; border-radius: 0; cursor: pointer; transition: color 0.2s, background-color 0.2s; } .ds-btn-ghost-operate:hover { color: #fff; background: #1b2126; } .ds-btn-ghost-operate:focus-visible { outline: 2px solid #E43E3D; outline-offset: 2px; } .ds-btn-ghost-operate:disabled { opacity: 0.4; cursor: not-allowed; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Admin form field. Square, hairline border, border shifts to the accent on focus.",
+      "html": "<div class=\"ds-field-wrap\"><label class=\"ds-field-label\" for=\"ds-title\">Title *</label><input class=\"ds-field\" id=\"ds-title\" placeholder=\"2019 BMW M4 Competition\"></div>",
+      "css": ".ds-field-wrap { font-family: Poppins, sans-serif; } .ds-field-label { display: block; color: #9ca3af; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; margin-bottom: 8px; } .ds-field { width: 100%; background: var(--ink, #0a0f12); border: 1px solid var(--hairline, #23292d); border-radius: 0; padding: 12px 16px; font-family: inherit; font-size: 15px; color: #fff; transition: border-color 0.2s; } .ds-field::placeholder { color: #9ca3af; } .ds-field:focus { outline: none; border-color: #E43E3D; } .ds-field:focus-visible { outline: 2px solid #E43E3D; outline-offset: 2px; }"
+    },
+    {
+      "name": "Register Entry",
+      "kind": "custom",
+      "refersTo": "register-entry",
+      "description": "One line of stock. No container, no radius, no shadow \u2014 a hairline and grid columns are the whole structure.",
+      "html": "<a class=\"ds-entry\" href=\"#\"><span class=\"ds-entry-bar\" aria-hidden=\"true\"></span><div class=\"ds-entry-year\">2019</div><div class=\"ds-entry-crop\"></div><div class=\"ds-entry-main\"><h3 class=\"ds-entry-title\">BMW M4 Competition</h3><p class=\"ds-entry-prep\">Inspected &amp; detailed in-house</p><p class=\"ds-entry-specs\">42,000 km &nbsp;\u00b7&nbsp; Petrol &nbsp;\u00b7&nbsp; Automatic</p></div><div class=\"ds-entry-price\">\u20b954,50,000</div></a>",
+      "css": ".ds-entry { position: relative; display: grid; grid-template-columns: 4.5rem 12rem 1fr auto; column-gap: 32px; align-items: start; padding: 28px 0; border-top: 1px solid var(--hairline, #23292d); text-decoration: none; font-family: Poppins, sans-serif; } .ds-entry-bar { position: absolute; top: -1px; left: 0; height: 1px; width: 0; background: #E43E3D; transition: width 0.7s ease-out; } .ds-entry:hover .ds-entry-bar { width: 100%; } .ds-entry-year { font-size: 30px; font-weight: 900; color: #6b767f; letter-spacing: -0.05em; line-height: 1; font-variant-numeric: tabular-nums; transition: color 0.5s; } .ds-entry:hover .ds-entry-year { color: #E43E3D; } .ds-entry-crop { width: 192px; height: 128px; background: #111; filter: grayscale(0.55) contrast(1.05); transition: transform 0.9s ease-out, filter 0.9s ease-out; } .ds-entry:hover .ds-entry-crop { filter: grayscale(0); transform: scale(1.04); } .ds-entry-title { margin: 0; font-size: 2.1rem; font-weight: 900; text-transform: uppercase; letter-spacing: -0.05em; line-height: 0.95; color: #fff; } .ds-entry-prep { margin: 10px 0 0; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; color: #E43E3D; } .ds-entry-specs { margin: 8px 0 0; font-size: 13px; font-weight: 500; color: #9ca3af; font-variant-numeric: tabular-nums; } .ds-entry-price { font-size: 1.75rem; font-weight: 900; letter-spacing: -0.05em; color: #fff; white-space: nowrap; font-variant-numeric: tabular-nums; } .ds-entry:focus-visible { outline: 2px solid #E43E3D; outline-offset: -2px; }"
+    },
+    {
+      "name": "Operate Row",
+      "kind": "custom",
+      "refersTo": "register-entry-operate",
+      "description": "The same register in the Operate voice: ~60px tall, 14px semibold title, 11.5px spec line, no display type.",
+      "html": "<div class=\"ds-oprow\"><div class=\"ds-oprow-thumb\"></div><div class=\"ds-oprow-main\"><h3 class=\"ds-oprow-title\">BMW M4 Competition</h3><p class=\"ds-oprow-spec\"><span class=\"ds-oprow-price\">\u20b954,50,000</span> &nbsp;\u00b7&nbsp; 2019 &nbsp;\u00b7&nbsp; 42,000 km &nbsp;\u00b7&nbsp; 6 photos</p></div><span class=\"ds-oprow-status\"><span class=\"ds-oprow-dot\" aria-hidden=\"true\"></span>Live</span></div>",
+      "css": ".ds-oprow { display: flex; align-items: center; gap: 16px; padding: 10px 12px; border-bottom: 1px solid #1b2126; font-family: Poppins, sans-serif; transition: background-color 0.2s; } .ds-oprow:hover { background: #0e1316; } .ds-oprow-thumb { width: 56px; height: 40px; flex: 0 0 auto; background: #15191c; } .ds-oprow-main { min-width: 0; flex: 1; } .ds-oprow-title { margin: 0; font-size: 14px; font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; } .ds-oprow-spec { margin: 2px 0 0; font-size: 11.5px; color: #9ca3af; font-variant-numeric: tabular-nums; } .ds-oprow-price { color: #d1d5db; font-weight: 600; } .ds-oprow-status { display: inline-flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #34d399; } .ds-oprow-dot { width: 6px; height: 6px; background: #34d399; }"
+    },
+    {
+      "name": "Price Panel",
+      "kind": "card",
+      "refersTo": "panel-price",
+      "description": "The one raised surface on the detail page: asking price plus the enquiry action.",
+      "html": "<div class=\"ds-panel-price\"><p class=\"ds-panel-label\">Asking</p><p class=\"ds-panel-figure\">\u20b954,50,000</p></div>",
+      "css": ".ds-panel-price { background: var(--panel, #111111); padding: 28px; border-radius: 0; box-shadow: 0 30px 60px rgba(0,0,0,0.8); font-family: Poppins, sans-serif; } .ds-panel-label { margin: 0; color: #9ca3af; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; } .ds-panel-figure { margin: 6px 0 0; color: #fff; font-size: 2.75rem; font-weight: 900; letter-spacing: -0.05em; line-height: 1; font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "Spec List",
+      "kind": "custom",
+      "refersTo": "register-entry",
+      "description": "Condition before price: hairline-divided label/value rows on the detail page.",
+      "html": "<dl class=\"ds-specs\"><div class=\"ds-specs-row\"><dt>Year</dt><dd>2019</dd></div><div class=\"ds-specs-row\"><dt>KM driven</dt><dd>42,000</dd></div><div class=\"ds-specs-row\"><dt>Transmission</dt><dd>Automatic</dd></div></dl>",
+      "css": ".ds-specs { margin: 0; border-top: 1px solid var(--hairline, #23292d); font-family: Poppins, sans-serif; } .ds-specs-row { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--hairline, #23292d); } .ds-specs-row dt { color: #9ca3af; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; } .ds-specs-row dd { margin: 0; color: #fff; font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "Masthead",
+      "kind": "nav",
+      "refersTo": "button-signal",
+      "description": "Page masthead: display word over a hairline, count and preparation claim set beside it. No eyebrow.",
+      "html": "<header class=\"ds-masthead\"><h1 class=\"ds-masthead-word\">Stock</h1><p class=\"ds-masthead-meta\">6 available \u00b7 2 sold<span class=\"ds-masthead-claim\">Prepared in our own workshop</span></p></header>",
+      "css": ".ds-masthead { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 32px; padding-bottom: 20px; font-family: Poppins, sans-serif; } .ds-masthead-word { margin: 0; font-size: clamp(3.5rem, 13vw, 7.5rem); font-weight: 900; color: #fff; text-transform: uppercase; letter-spacing: -0.045em; line-height: 0.8; } .ds-masthead-meta { margin: 0 0 8px; color: #9ca3af; font-size: 13px; font-weight: 500; text-align: right; font-variant-numeric: tabular-nums; } .ds-masthead-claim { display: block; margin-top: 6px; color: #E43E3D; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; }"
+    },
+    {
+      "name": "Gallery Thumbnail Strip",
+      "kind": "custom",
+      "refersTo": "register-entry",
+      "description": "1px-gapped thumbnails over a hairline field; the active one is full colour with a solid 3px red bar.",
+      "html": "<div class=\"ds-thumbs\"><button class=\"ds-thumb is-active\" aria-current=\"true\"><span class=\"ds-thumb-bar\" aria-hidden=\"true\"></span></button><button class=\"ds-thumb\"></button><button class=\"ds-thumb\"></button><button class=\"ds-thumb\"></button></div>",
+      "css": ".ds-thumbs { display: flex; flex-wrap: wrap; gap: 1px; background: var(--hairline, #23292d); margin-top: 1px; } .ds-thumb { position: relative; width: calc(14.2857% - 1px); aspect-ratio: 4 / 3; background: #111; border: none; border-radius: 0; padding: 0; cursor: pointer; filter: grayscale(1); opacity: 0.55; transition: opacity 0.5s, filter 0.5s; } .ds-thumb:hover, .ds-thumb.is-active { filter: grayscale(0); opacity: 1; } .ds-thumb-bar { position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: #E43E3D; } .ds-thumb:focus-visible { outline: 2px solid #E43E3D; outline-offset: 2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Auction-Catalogue Ledger",
+    "overview": "This is a workshop's register, not a showroom and not a classifieds grid. Stock is set down as numbered lines under a rule: year, a locked photo crop, the car named at display scale, the preparation claim, the specs, the asking price. The structure does the persuading, because the photographs cannot \u2014 they are phone snaps taken on the lot, in mixed light, against a cluttered yard. A uniform photo-card grid would put every one of those snaps on trial. A ledger puts them in order, and order reads as competence.\n\nThe world is near-black, hard-edged and typographically loud. Poppins at black weight, uppercase, pulled tight (-0.045em), is the only ornament; a single red carries every signal there is. Nothing curves. There are no rounded corners, no gradients behind text, no soft cards floating on a wash \u2014 depth comes from one heavy offset shadow under the few elements that genuinely sit on top of the page, and from hairline rules everywhere else.\n\nThe system deliberately runs in two registers, and mixing them is the failure case. Persuade is the public surface: display type, hairlines, the red, the register structure. Operate is /admin: 14px semibold titles, 11.5px spec lines, ~60px rows, no display type and no marketing voice. The owner manages stock from a phone in the workshop; there, scanning speed beats expression, and the brand survives only in the accent and the square corners.",
+    "keyCharacteristics": [
+      "Near-black grounds (#0a0f12 page, #111111 panel) and exactly one accent red",
+      "Zero border-radius on every rebuilt surface; square focus rings, square scrollbar, square icon caps",
+      "Hairline rules (1px #23292d) as the primary structural device, with a 2px red rule opening each register",
+      "Display-scale black uppercase Poppins at tracking -0.045em, against 11px uppercase labels at 0.18em \u2014 no middle ground",
+      "Tabular numerals on every price, km and year so columns never jitter",
+      "One authored animation, one shadow, one accent: the system's expressiveness is budgeted"
+    ],
+    "rules": [
+      {
+        "name": "The One Red Rule",
+        "body": "There is exactly one accent hue in this system. A third hue (amber) was introduced during the build and removed in review. Red Pressed, Red Deep and Red Tint are states and fields of the same red, not siblings. The only non-red hue permitted anywhere is Live Green, and only on /admin.",
+        "section": "colors"
+      },
+      {
+        "name": "The Grey Floor Rule",
+        "body": "On #0a0f12, gray-700 (1.87:1), gray-600 (2.55:1) and gray-500 (3.99:1) all fail. gray-400 (#9ca3af, 7.59:1) is the lowest permissible grey for text. There is no grey between it and white in this system except gray-300.",
+        "section": "colors"
+      },
+      {
+        "name": "The No-Opacity-Recede Rule",
+        "body": "Never recede an element with opacity when its colour already sits at the grey floor \u2014 compositing drops it to roughly 2.5:1. Sold rows recede by switching white to gray-400 explicitly, and photos by desaturating. Opacity is permitted only on images, on disabled controls, and on a whole row mid-mutation.",
+        "section": "colors"
+      },
+      {
+        "name": "The Token Plumbing Rule",
+        "body": "Tailwind v4 here is CSS-first with no config file, and @theme inline inlines its values at each utility site \u2014 it never emits the custom properties, so hand-written CSS reading var(--color-signal) resolves empty and silently falls back to currentColor. A parallel plain :root block (--ink, --panel, --hairline, --signal) exists solely so the hand-written rules in globals.css can read the palette. Any new hand-written CSS uses the :root names; any new utility uses the @theme names. The legacy --color-primary: #FF9500 is orange, unused and misleading.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Registers Rule",
+        "body": "Persuade and Operate never mix. Display-scale black uppercase type is forbidden on /admin (the login masthead is the single boundary marker); 14px semibold sentence-case titles are forbidden on public surfaces. If a new screen cannot say which register it is in, it is not designed yet.",
+        "section": "typography"
+      },
+      {
+        "name": "The No-Eyebrow Rule",
+        "body": "No kicker, eyebrow or label line sits above a heading. The word carries its own weight; the masthead goes straight onto the page. Where a supporting line exists, it sits beside or below the heading, never above it.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Rule",
+        "body": "Every price, kilometre figure and year carries .tnum (font-variant-numeric: tabular-nums). These sit in columns across stacked rows and must not jitter between entries.",
+        "section": "typography"
+      },
+      {
+        "name": "The No-Uniform-Grid Rule",
+        "body": "Stock is never rendered as a grid of equal-sized cards. Entries are full-width lines separated by hairlines. Equipment lists and admin controls may use grids; stock may not.",
+        "section": "layout"
+      },
+      {
+        "name": "The One Shadow Rule",
+        "body": "There is a single elevation step. An element either sits flat on the ground with a hairline, or it carries Panel Drop (0 30px 60px rgba(0,0,0,0.8)). No intermediate shadows, no hover lift, no coloured glow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Square Corner Rule",
+        "body": "No rounded corners anywhere in the register language. The incumbent marketing sections carry pill-shaped CTAs (rounded-full); those are legacy surface, explicitly out of scope, and the radius does not propagate to any new work.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do state which register a new screen belongs to before designing it \u2014 Persuade (display type, red, hairlines, register structure) or Operate (14px semibold, 11.5px specs, ~60px rows).",
+      "Do open every register and every title band with the 2px Workshop Red rule, and separate every row with a 1px hairline.",
+      "Do keep body and supporting text at gray-400 (#9ca3af) or lighter on #0a0f12; recede elements with an explicit colour change, never with opacity.",
+      "Do put .tnum on every price, kilometre figure and year.",
+      "Do lock photo crops into fixed-aspect wells with object-cover, and desaturate at rest so a mismatched phone-photo set coheres.",
+      "Do serve images unoptimized through Cloudinary's own transform (w_800,c_limit,f_auto,q_auto at the needed width) and ship video preload=\"none\" with a poster.",
+      "Do read palette values from the plain :root block (--ink, --panel, --hairline, --signal) in hand-written CSS, and from the @theme names in utilities.",
+      "Do theme the surfaces you did not draw: selection, scrollbar, tap highlight and focus ring all come from the palette.",
+      "Do animate arrivals with .entry-rise only \u2014 0.62s cubic-bezier(0.16, 1, 0.3, 1), from an already-visible default, disabled under prefers-reduced-motion."
+    ],
+    "donts": [
+      "Don't use a border-radius anywhere in the register language \u2014 not on buttons, inputs, badges, image wells, focus rings or active markers.",
+      "Don't render stock as a uniform grid of equal-sized photo cards; entries are full-width lines.",
+      "Don't put a kicker or eyebrow above a heading.",
+      "Don't introduce a third hue. Red Pressed, Red Deep and Red Tint are states of the one red; Live Green is scoped to the admin status indicator and appears nowhere public.",
+      "Don't use gray-500, gray-600 or gray-700 for text on #0a0f12 \u2014 all three fail contrast.",
+      "Don't write the focus-ring selector with :where(); zero specificity loses to preflight and Chrome's blue ring returns.",
+      "Don't read or extend --color-primary: #FF9500; it is orange, unused and misleading.",
+      "Don't use Unicode glyphs or emoji as icons, or import an icon package \u2014 extend the authored set at 24/1.75/square/miter.",
+      "Don't add a second shadow, a hover lift, or a coloured glow; Panel Drop is the only elevation step.",
+      "Don't let marketing voice, display type or persuasion copy into /admin."
+    ]
+  }
+}

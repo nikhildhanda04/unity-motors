@@ -1,25 +1,113 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: "Andenver";
-  src: url("/font/Andenver.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Plain custom properties for the hand-written rules below. These CANNOT
+     live in @theme inline: "inline" means Tailwind substitutes the value at
+     each utility site and never emits the variable, so var() reads empty here
+     and colours silently fall back to currentColor. */
+  --ink: #0a0f12;
+  --panel: #111111;
+  --hairline: #23292d;
+  --signal: #e43e3d;
 }
 
 @theme inline {
-  --font-primary: "Andenver", sans-serif;
   --font-secondary: "Poppins", sans-serif;
   --font-inter: "Inter", sans-serif;
-  --color-dark: #121212;
-  --color-light: #F0F0F0;
-  --color-primary: #FF9500;
+
+  /* The real palette, finally tokenised. #E43E3D was hardcoded ~25 times and
+     the old --color-primary (orange) was never used by anything. */
+  --color-ink: #0a0f12;      /* page ground */
+  --color-panel: #111111;    /* raised panel */
+  --color-hairline: #23292d; /* 1px rules and borders */
+  --color-signal: #e43e3d;   /* the one accent */
+  --color-signal-deep: #a32a29;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* ---- Browser surfaces -------------------------------------------------
+   The parts we did not draw still carry the design. Defaults here belong to
+   no design system, so they get themed from the palette.               */
+
+::selection {
+  background: var(--signal);
+  color: #fff;
+}
+
+html {
+  scrollbar-color: var(--hairline) var(--ink);
+  -webkit-tap-highlight-color: rgb(228 62 61 / 0.18);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ink);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--hairline);
+  /* square, like every other corner in this world */
+  border: 2px solid var(--ink);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #39424a;
+}
+
+/* Square focus ring in the accent — visible on dark grounds, no rounded halo.
+   NOT :where(): that has zero specificity and loses to Tailwind's preflight,
+   which silently leaves Chrome's default blue ring in place. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 2px;
+  border-radius: 0;
+}
+
+a {
+  text-underline-offset: 0.25em;
+  text-decoration-thickness: 1px;
+}
+
+/* Prices, mileage and years sit in columns and must not jitter between rows. */
+.tnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* The one authored motion: a register entry arriving. Exponential ease-out
+   from an already-visible default, so nothing is hidden if JS or motion is off. */
+@keyframes entry-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+}
+
+.entry-rise {
+  animation: entry-rise 0.62s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .entry-rise {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

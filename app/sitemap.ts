@@ -1,36 +1,58 @@
 import { MetadataRoute } from 'next'
+import { getCars } from '@/lib/cars'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+const SITE = 'https://unitymotors.in'
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  // Never let a blob/network hiccup fail the whole sitemap build.
+  const cars = await getCars().catch(() => [])
+
+  const carUrls: MetadataRoute.Sitemap = cars
+    .filter((c) => !c.sold)
+    .map((c) => ({
+      url: `${SITE}/cars/${c.slug}`,
+      lastModified: new Date(c.createdAt),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    }))
+
   return [
     {
-      url: 'https://unitymotors.in',
+      url: SITE,
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 1,
     },
     {
-      url: 'https://unitymotors.in/#services',
+      url: `${SITE}/cars`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
+    {
+      url: `${SITE}/#services`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: 'https://unitymotors.in/#about',
+      url: `${SITE}/#about`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
-      url: 'https://unitymotors.in/#pricing',
+      url: `${SITE}/#pricing`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.5,
     },
     {
-      url: 'https://unitymotors.in/#booking',
+      url: `${SITE}/#booking`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.8,
-    }
+    },
+    ...carUrls,
   ]
 }

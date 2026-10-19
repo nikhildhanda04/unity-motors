@@ -10,6 +10,7 @@ import LocationSection from "./components/location";
 import FooterSection from "./components/footer";
 import { FadeIn } from "./components/scroll-anim";
 import ShopTeaserSection from "./components/shop-teaser";
+import CarsTeaserSection from "./components/cars-teaser";
 
 export default function Home() {
   return (
@@ -20,6 +21,13 @@ export default function Home() {
       </FadeIn>
       <FadeIn delay={0.1}>
         <AboutSection />
+      </FadeIn>
+
+      {/* Stock sits high: visitors arriving from a WhatsApp forward came to see
+          cars, and seven sections of detailing content is further than they
+          will scroll. */}
+      <FadeIn delay={0.1}>
+        <CarsTeaserSection />
       </FadeIn>
       <FadeIn delay={0.1}>
         <VisionSection />
@@ -34,7 +42,7 @@ export default function Home() {
       <FadeIn delay={0.1}>
         <PricingSection />
       </FadeIn>
-            <FadeIn delay={0.1}>
+      <FadeIn delay={0.1}>
         <ShopTeaserSection />
       </FadeIn>
 

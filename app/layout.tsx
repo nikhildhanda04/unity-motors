@@ -16,6 +16,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
+  // Without this, car openGraph images resolve against localhost.
+  metadataBase: new URL("https://unitymotors.in"),
   title: "Unity Motors - Premier Car Detailing in Karnal",
   description: "Experience Karnal's best car detailing service. At Unity Motors, we provide premium car wash, ceramic coating, paint protection, and deep cleaning services.",
   keywords: ["car detailing", "car wash Karnal", "ceramic coating Karnal", "paint protection", "auto detailing", "Unity Motors"],
@@ -59,6 +61,30 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} ${inter.variable} antialiased`} suppressHydrationWarning>
+        {/* Direction contract. display:contents so it adds no box; dangerouslySetInnerHTML
+            because JSX comments never reach the emitted HTML and an unauditable
+            contract is no contract. */}
+        <div
+          style={{ display: "contents" }}
+          dangerouslySetInnerHTML={{ __html: `<!--
+  THESIS: Stock as a register of prepared cars, not a classifieds grid. Refuses
+  the uniform photo-card grid every used-car site ships, because our photos are
+  phone snaps and our argument is preparation, not gloss.
+  OWN-WORLD: Near-black grounds (#0a0f12 / #111 / black), one red #E43E3D.
+  Poppins black uppercase at display scale, tracking-tighter. Hard edges, no
+  rounded corners, hairline rules, heavy offset shadows. The incumbent
+  hero/stats language, never the rounded-card language.
+  STORY: A buyer scans a short serious register, sees the workshop prepared
+  each car, opens one, and enquires on WhatsApp with that car named.
+  FIRST VIEWPORT: STOCK at display scale over a hairline, count at the right,
+  then two register entries already visible: year, locked photo crop, title,
+  prep line, specs, price. Enquiry pinned on the car page.
+  FORM: Auction-catalogue ledger. Candidate 3 of 7. Seed key ed6158d9.
+  FINISH: unreviewed and undocumented is unfinished; this build ends with the
+  finish review, the verdict, and DESIGN.md
+-->` }}
+        />
+
         <SmoothScrolling>
           {children}
         </SmoothScrolling>

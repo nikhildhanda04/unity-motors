@@ -35,7 +35,7 @@ export const ShopTeaserSection = () => {
             </span>
             <h2 className="text-4xl sm:text-5xl lg:text-5xl font-black text-white uppercase tracking-tighter mb-4 leading-tight">
               Exclusive Parts <br />
-              <span className="text-gray-500">Store</span>
+              <span className="text-gray-400">Store</span>
             </h2>
             <div className="w-16 h-1 bg-[#E43E3D] mb-4"></div>
             <p className="text-gray-400 font-medium leading-relaxed max-w-xl">
@@ -43,7 +43,7 @@ export const ShopTeaserSection = () => {
             </p>
           </div>
           
-          <button disabled className="bg-[#111] border border-gray-800 text-gray-500 font-black text-xs uppercase tracking-widest py-3.5 px-8 rounded-full cursor-not-allowed">
+          <button disabled className="bg-[#111] border border-gray-800 text-gray-400 font-black text-xs uppercase tracking-widest py-3.5 px-8 rounded-full cursor-not-allowed">
             Shop Opening Soon
           </button>
         </div>

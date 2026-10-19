@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export const Hero = () => {
   return (
@@ -13,12 +14,20 @@ export const Hero = () => {
           <h1 className="text-5xl sm:text-6xl md:text-xl xl:text-[80px] font-black text-white leading-[0.85] uppercase tracking-tighter mb-6 sm:mb-8">
             Keep Your Car <br /> Clean Always
           </h1>
-          <p className="text-gray-600 text-base sm:text-lg max-w-md mb-8 sm:mb-10 leading-relaxed font-medium">
+          <p className="text-gray-400 text-base sm:text-lg max-w-md mb-8 sm:mb-10 leading-relaxed font-medium">
             Unity Motors is a brand which is literally going to change the people think car cleaning.
           </p>
-          <a href="#booking" className="bg-[#E43E3D] hover:bg-[#c93231] text-white font-bold py-3.5 sm:py-4 px-6 sm:px-8 rounded-full transition-colors uppercase tracking-wider text-xs sm:text-sm shadow-xl shadow-red-500/20 inline-block text-center">
-            Get An Appointment
-          </a>
+          {/* Two jobs, two doors: book a detail, or come to buy a car.
+              Pills here match the hero's own incumbent language, not the
+              register's square buttons. */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
+            <a href="#booking" className="bg-[#E43E3D] hover:bg-[#c93231] text-white font-bold py-3.5 sm:py-4 px-6 sm:px-8 rounded-full transition-colors uppercase tracking-wider text-xs sm:text-sm shadow-xl shadow-red-500/20 inline-block text-center">
+              Get An Appointment
+            </a>
+            <Link href="/cars" className="border border-white/30 hover:border-white hover:bg-white hover:text-black text-white font-bold py-3.5 sm:py-4 px-6 sm:px-8 rounded-full transition-colors uppercase tracking-wider text-xs sm:text-sm inline-block text-center">
+              Cars For Sale
+            </Link>
+          </div>
         </div>
 
         <div className="w-full lg:w-[45%] relative flex justify-center lg:justify-end mt-12 sm:mt-16 lg:mt-0">
