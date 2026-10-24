@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { img } from "@/lib/media";
 import type { Car } from "@/lib/types";
 import { Play } from "./icons";
@@ -9,23 +9,43 @@ import { Play } from "./icons";
 export default function CarGallery({ car }: { car: Car }) {
   const [active, setActive] = useState(0);
   const [playing, setPlaying] = useState(false);
-  const current = car.images[active];
+  const [paused, setPaused] = useState(false);
+  const count = car.images.length;
+
+  // Advances every 5s. `active` is a dependency on purpose: picking a thumbnail
+  // restarts the clock instead of jumping again a moment later.
+  useEffect(() => {
+    if (count < 2 || paused) return;
+    const t = setTimeout(() => setActive((a) => (a + 1) % count), 5000);
+    return () => clearTimeout(t);
+  }, [active, count, paused]);
 
   return (
     <div>
-      <div className="relative w-full aspect-4/3 overflow-hidden bg-[#111] shadow-[0_30px_60px_rgba(0,0,0,0.8)]">
-        {current && (
+      <div
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+        className="relative w-full aspect-4/3 overflow-hidden bg-[#111] shadow-[0_30px_60px_rgba(0,0,0,0.8)]"
+      >
+        {/*
+          Every photo is in the DOM and eagerly fetched, cross-fading on opacity.
+          Swapping a single <Image> src meant each slide started downloading the
+          moment it was shown — a visible blank box on every advance.
+        */}
+        {car.images.map((m, i) => (
           <Image
-            key={current.publicId}
-            src={img(current.url, 1600)}
-            alt={car.title}
+            key={m.publicId}
+            src={img(m.url, 1200)}
+            alt={i === 0 ? car.title : ""}
             fill
             unoptimized
-            priority
+            {...(i === 0 ? { priority: true } : { loading: "eager" as const })}
             sizes="(max-width: 1024px) 100vw, 62vw"
-            className="object-cover entry-rise"
+            className={`object-cover transition-opacity duration-700 ease-out ${
+              i === active ? "opacity-100" : "opacity-0"
+            }`}
           />
-        )}
+        ))}
         {car.sold && (
           <span className="absolute top-0 left-0 bg-black/85 text-gray-200 font-black text-[11px] uppercase tracking-[0.2em] px-4 py-2.5">
             Sold

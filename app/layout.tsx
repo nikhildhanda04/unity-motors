@@ -60,6 +60,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      {/* Every photo is served from Cloudinary; opening the connection during
+          HTML parse cuts the TLS handshake off the first image's critical path. */}
+      <head>
+        <link rel="preconnect" href="https://res.cloudinary.com" />
+      </head>
       <body className={`${poppins.variable} ${inter.variable} antialiased`} suppressHydrationWarning>
         {/* Direction contract. display:contents so it adds no box; dangerouslySetInnerHTML
             because JSX comments never reach the emitted HTML and an unauditable

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useActionState, useRef, useState } from "react";
 import { saveCar, type SaveState } from "../../actions";
 import { uploadToCloudinary } from "@/lib/upload";
+import PhotoCropper from "./photo-cropper";
 import { img, videoPoster } from "@/lib/media";
 import { ArrowLeft, ArrowRight, Close, Plus } from "../../../components/icons";
 import {
@@ -36,12 +37,10 @@ export default function CarForm({ car }: { car: Car | null }) {
   const [progress, setProgress] = useState(0);
   const [uploadError, setUploadError] = useState<string | null>(null);
   const dragIndex = useRef<number | null>(null);
+  // Picked files waiting to be framed. Nothing uploads until the cropper is done.
+  const [toCrop, setToCrop] = useState<File[]>([]);
 
-  async function handleImages(fileList: FileList | null) {
-    // Snapshot before the first await. `fileList` is the input's LIVE FileList:
-    // the onChange handler clears `input.value` as soon as this function yields,
-    // which empties it mid-loop and silently uploads only the first photo.
-    const files = fileList ? Array.from(fileList) : [];
+  async function handleImages(files: File[]) {
     if (!files.length) return;
 
     setUploadError(null);
@@ -407,11 +406,23 @@ export default function CarForm({ car }: { car: Car | null }) {
             multiple
             hidden
             onChange={(e) => {
-              handleImages(e.target.files);
+              // Snapshot now: clearing input.value empties the live FileList.
+              setToCrop(Array.from(e.target.files ?? []));
               e.target.value = "";
             }}
           />
         </label>
+
+        {toCrop.length > 0 && (
+          <PhotoCropper
+            files={toCrop}
+            onCancel={() => setToCrop([])}
+            onDone={(cropped) => {
+              setToCrop([]);
+              handleImages(cropped);
+            }}
+          />
+        )}
 
         <h2 className="text-white font-bold text-[15px] mt-10 mb-1">Video</h2>
         <p className="text-gray-400 text-xs mb-6">
