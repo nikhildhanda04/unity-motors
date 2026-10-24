@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getCars } from "@/lib/cars";
 import { logout } from "./actions";
 import CarRow from "./car-row";
+import AdminTabs from "./tabs";
 import { Plus, Power } from "../components/icons";
 
 // An admin view must never be served as build-time static HTML.
@@ -26,12 +27,7 @@ export default async function AdminDashboard() {
       <header className="sticky top-0 z-10 bg-[#0a0f12] border-b border-[#23292d]">
         <div className="max-w-5xl mx-auto px-4 min-h-14 py-2 flex items-center justify-between gap-3">
           <div className="flex flex-wrap items-baseline gap-x-3 min-w-0">
-            <span className="text-white font-black uppercase tracking-tight text-sm">
-              Unity Motors
-            </span>
-            <span className="text-[#E43E3D] font-bold text-[10px] uppercase tracking-[0.18em]">
-              Stock
-            </span>
+            <AdminTabs />
             {cars.length > 0 && (
               <span className="tnum text-gray-400 text-[11px]">
                 {live} live · {sold} sold

@@ -17,8 +17,18 @@ import {
   updateCar,
   type CarInput,
 } from "@/lib/cars";
+import {
+  createProduct,
+  deleteProduct,
+  getProductById,
+  setInStock,
+  setProductFeatured,
+  updateProduct,
+  uniqueProductSlug,
+  type ProductInput,
+} from "@/lib/products";
 import { destroyAssets } from "@/lib/cloudinary";
-import { slugify, type Car } from "@/lib/types";
+import { slugify, type Car, type Product, type Variant } from "@/lib/types";
 
 /** Every mutating action calls this first. The proxy guards navigation,
  *  not server actions — these are directly invocable endpoints. */
@@ -167,4 +177,114 @@ export async function saveCar(
   else await createCar(input);
 
   redirect("/admin");
+}
+
+// ---- Products -------------------------------------------------------------
+
+export async function toggleInStock(id: string) {
+  await requireAuth();
+  const product = await getProductById(id);
+  if (product) await setInStock(id, !product.inStock);
+}
+
+export async function toggleProductFeatured(id: string) {
+  await requireAuth();
+  const product = await getProductById(id);
+  if (product) await setProductFeatured(id, !product.featured);
+}
+
+export async function removeProduct(id: string) {
+  await requireAuth();
+
+  const product = await deleteProduct(id);
+
+  // Row first, assets after — same ordering as removeCar. An orphaned
+  // Cloudinary asset is a cheaper failure than a listing with dead media.
+  if (product) {
+    await destroyAssets(
+      product.images.map((i) => ({ publicId: i.publicId, kind: "image" as const })),
+    );
+  }
+}
+
+export async function saveProduct(
+  _prev: SaveState,
+  formData: FormData,
+): Promise<SaveState> {
+  await requireAuth();
+
+  const id = String(formData.get("id") ?? "").trim();
+  const title = String(formData.get("title") ?? "").trim();
+  if (!title) return { error: "Title is required." };
+
+  let images: Product["images"];
+  let variants: Variant[];
+  try {
+    images = JSON.parse(String(formData.get("images") || "[]"));
+    variants = JSON.parse(String(formData.get("variants") || "[]"));
+  } catch {
+    return { error: "Form data was malformed. Re-upload and try again." };
+  }
+  if (!images.length) return { error: "Add at least one photo." };
+
+  // A row the owner started and abandoned is not an option; an unnamed one
+  // would show as a blank chip on the product page.
+  variants = variants
+    .map((v) => ({ name: String(v.name ?? "").trim(), price: Math.round(Number(v.price) || 0) }))
+    .filter((v) => v.name !== "");
+
+  if (variants.some((v) => v.price <= 0)) {
+    return { error: "Every option needs a price above zero." };
+  }
+  // The cart keys lines by slug + variant name, so two options sharing a name
+  // would merge into one line at the wrong price.
+  if (new Set(variants.map((v) => v.name.toLowerCase())).size !== variants.length) {
+    return { error: "Two options have the same name. Make them distinct." };
+  }
+
+  const price = Math.round(Number(formData.get("price") ?? 0));
+  if (variants.length === 0 && (!Number.isFinite(price) || price <= 0)) {
+    return { error: "Enter a price, or add options that carry their own." };
+  }
+
+  const isNew = !id || id === "new";
+  const existing = isNew ? null : await getProductById(id);
+  if (!isNew && !existing) return { error: "That product no longer exists." };
+
+  const base = slugify(String(formData.get("slug") || "") || title);
+  const slug = await uniqueProductSlug(base || `part-${Date.now()}`, existing?.id);
+
+  const productInput: ProductInput = {
+    slug,
+    title,
+    // With options, the base price is never charged — store 0 rather than a
+    // stale number that looks authoritative in the database.
+    price: variants.length ? 0 : price,
+    // "__new__" is the dropdown's sentinel for "let me type one"; the select
+    // unmounts the moment it is chosen, but never store it if one slips through.
+    category: (() => {
+      const c = String(formData.get("category") ?? "").trim();
+      return c === "__new__" ? "" : c;
+    })(),
+    description: String(formData.get("description") ?? "").trim(),
+    variants,
+    images,
+    // An unticked checkbox submits nothing at all, so absence means false.
+    inStock: formData.get("inStock") === "on",
+    featured: formData.get("featured") === "on",
+  };
+
+  // Photos dropped during an edit must be cleaned up, or they bill forever.
+  if (existing) {
+    const kept = new Set(productInput.images.map((i) => i.publicId));
+    const orphans = existing.images
+      .filter((i) => !kept.has(i.publicId))
+      .map((i) => ({ publicId: i.publicId, kind: "image" as const }));
+    if (orphans.length) await destroyAssets(orphans);
+  }
+
+  if (existing) await updateProduct(existing.id, productInput);
+  else await createProduct(productInput);
+
+  redirect("/admin/products");
 }

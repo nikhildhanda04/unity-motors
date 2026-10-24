@@ -37,3 +37,27 @@ model Car {
   @@index([sold, createdAt])
   @@map("cars")
 }
+
+/// Parts and accessories sold from /store. Deliberately thinner than Car:
+/// no year/km/registration, and stock is a boolean because the sale closes on
+/// WhatsApp, where any unit count would drift out of sync within a week.
+model Product {
+  id          String   @id @default(uuid())
+  slug        String   @unique
+  title       String
+  /// Base price. Ignored when variants exist — each variant carries its own,
+  /// and listings read "from <lowest>".
+  price       Int      @default(0)
+  category    String   @default("")
+  description String   @default("")
+  /// [{ name, price }] — empty for a product sold one way only.
+  variants    Json     @default("[]")
+  images      Json     @default("[]")
+  inStock     Boolean  @default(true)
+  featured    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+
+  /// Listings are always "in stock first, newest first".
+  @@index([inStock, createdAt])
+  @@map("products")
+}

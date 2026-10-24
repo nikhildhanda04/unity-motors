@@ -7,12 +7,13 @@
     "build": "prisma generate && next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "node scripts/auth.test.mjs && node scripts/whatsapp.test.mjs && tsx scripts/crop.test.mts",
+    "test": "node scripts/auth.test.mjs && node scripts/whatsapp.test.mjs && tsx scripts/crop.test.mts && tsx scripts/reviews.test.mts && tsx scripts/store.test.mts",
     "postinstall": "prisma generate",
     "db:push": "prisma db push",
     "db:studio": "prisma studio",
     "test:db": "tsx scripts/db.test.mts",
-    "db:seed": "tsx scripts/seed-demo.mts"
+    "db:seed": "tsx scripts/seed-demo.mts",
+    "db:seed:parts": "tsx scripts/seed-demo-products.mts"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.2.0",

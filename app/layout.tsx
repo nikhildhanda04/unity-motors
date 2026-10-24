@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
 import { SmoothScrolling } from "./components/smooth-scrolling";
+import { CartDock } from "./components/cart";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -93,6 +94,10 @@ export default function RootLayout({
         <SmoothScrolling>
           {children}
         </SmoothScrolling>
+
+        {/* Mounted once, outside the page, so the drawer sits above whatever
+            is open. The cart itself is a module store — no provider needed. */}
+        <CartDock />
       </body>
     </html>
   );

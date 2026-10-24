@@ -11,6 +11,7 @@ import FooterSection from "./components/footer";
 import { FadeIn } from "./components/scroll-anim";
 import ShopTeaserSection from "./components/shop-teaser";
 import CarsTeaserSection from "./components/cars-teaser";
+import ReviewsSection from "./components/reviews";
 
 export default function Home() {
   return (
@@ -29,6 +30,12 @@ export default function Home() {
       <FadeIn delay={0.1}>
         <CarsTeaserSection />
       </FadeIn>
+
+      {/* Parts follow the cars directly: both are things to buy, and splitting
+          them across six sections of service content buries the second one. */}
+      <FadeIn delay={0.1}>
+        <ShopTeaserSection />
+      </FadeIn>
       <FadeIn delay={0.1}>
         <VisionSection />
       </FadeIn>
@@ -42,8 +49,11 @@ export default function Home() {
       <FadeIn delay={0.1}>
         <PricingSection />
       </FadeIn>
+
+      {/* Reviews sit just before the booking form: the last thing read before
+          the ask should be someone else vouching for the work. */}
       <FadeIn delay={0.1}>
-        <ShopTeaserSection />
+        <ReviewsSection />
       </FadeIn>
 
       <FadeIn delay={0.1}>

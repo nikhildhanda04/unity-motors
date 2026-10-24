@@ -102,6 +102,19 @@ export const EyeOff = ({ className }: IconProps) => (
   </svg>
 );
 
+export const Cart = ({ className }: IconProps) => (
+  <svg {...base(className)} {...stroke}>
+    <path d="M3 4h2.5l2.2 10.5h9.6L19 7H6.2" />
+    <path d="M9 19.5h.01M17 19.5h.01" strokeWidth={2.5} />
+  </svg>
+);
+
+export const Minus = ({ className }: IconProps) => (
+  <svg {...base(className)} {...stroke}>
+    <path d="M5 12h14" />
+  </svg>
+);
+
 export const Phone = ({ className }: IconProps) => (
   <svg {...base(className)} {...stroke}>
     <path d="M7 3h3l1.5 4.5-2 1.5a12 12 0 0 0 5.5 5.5l1.5-2L21 14v3a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2Z" />

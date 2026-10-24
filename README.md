@@ -35,3 +35,26 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 # unity-motors
+
+## Parts store
+
+`/store` sells parts and accessories. Add them in `/admin` → **Parts**, the
+same way cars are added.
+
+- **Options** — leave empty for a part sold one way. Add them when the same
+  part is sold per car, per size or per finish; each option carries its own
+  price and replaces the single price field. The buyer must pick one before
+  the Add to cart button unlocks.
+- **In stock** — one checkbox. There are no unit counts, because the sale
+  closes on WhatsApp and any count would drift out of sync.
+- **Checkout** — the cart lives in the browser only. "Order on WhatsApp"
+  opens a chat with every line and the total typed out, on the same number as
+  car enquiries (`NEXT_PUBLIC_WHATSAPP_NUMBER`). Nothing is charged or stored.
+
+Design and plan: `docs/superpowers/specs/2026-10-24-parts-store-design.md`.
+
+## Customer reviews
+
+Reviews come from a Google Form whose sheet is published as CSV. Setup —
+including the moderation column that keeps anything unapproved off the site —
+is in `docs/reviews-setup.md`.

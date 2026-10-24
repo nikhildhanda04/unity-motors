@@ -82,3 +82,45 @@ export const slugify = (s: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "")
     .slice(0, 80);
+
+/** A named way to buy one product, with its own price: "Swift" at ₹42,000. */
+export type Variant = { name: string; price: number };
+
+export type Product = {
+  id: string;
+  slug: string;
+  title: string;
+  price: number;
+  category: string;
+  description: string;
+  variants: Variant[];
+  images: Media[];
+  inStock: boolean;
+  featured: boolean;
+  createdAt: string;
+};
+
+/**
+ * Starting categories, seeded from what the homepage teaser already
+ * advertised. The admin dropdown offers these plus every category already in
+ * use, and lets the owner type a new one — so the list grows without a code
+ * change, while picking an existing entry stays easier than retyping it. That
+ * is what keeps three spellings of "Exhaust" from appearing.
+ */
+export const PRODUCT_CATEGORIES = [
+  "Performance",
+  "Exhaust & Aesthetics",
+  "Handling & Stance",
+  "Detailing & Care",
+  "Interior",
+  "Other",
+];
+
+/**
+ * What a listing shows. With variants the base price is not for sale, so the
+ * card reads "from <cheapest variant>" instead of a number nobody can pay.
+ */
+export function productPrice(p: Pick<Product, "price" | "variants">) {
+  if (p.variants.length === 0) return { from: false, amount: p.price };
+  return { from: true, amount: Math.min(...p.variants.map((v) => v.price)) };
+}

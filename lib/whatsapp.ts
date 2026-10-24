@@ -1,3 +1,5 @@
+import type { CartLine } from "./cart";
+import { cartTotal } from "./cart";
 import type { Car } from "./types";
 import { formatPrice } from "./types";
 
@@ -25,6 +27,35 @@ export function carEnquiryLink(car: Car): string {
     "",
     "Can you share more details about this?",
   ].join("\n");
+
+  return `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
+}
+
+/**
+ * The whole cart as one click-to-chat message. Same handoff as a car enquiry:
+ * the customer taps send, the sale closes in the chat the workshop already
+ * watches, and nothing is stored or charged here.
+ */
+export function cartEnquiryLink(lines: CartLine[]): string {
+  const number = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "";
+
+  // Reachable only if the cart empties between render and tap — a cart button
+  // is never shown for an empty cart. Offering to order ₹0 of nothing is worse
+  // than asking a plain question.
+  const text = lines.length
+    ? [
+        "Hey! I'd like to order from your store.",
+        "",
+        ...lines.map(
+          (l) =>
+            `${l.qty} x ${l.title}${l.variant ? ` (${l.variant})` : ""} — ₹${formatPrice(l.price * l.qty)}`,
+        ),
+        "",
+        `Total: ₹${formatPrice(cartTotal(lines))}`,
+        "",
+        "Can you confirm availability?",
+      ].join("\n")
+    : "Hey! I was looking at the parts on your website. Can you share more details?";
 
   return `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
 }

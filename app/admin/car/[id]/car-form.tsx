@@ -7,6 +7,7 @@ import { saveCar, type SaveState } from "../../actions";
 import { uploadToCloudinary } from "@/lib/upload";
 import PhotoCropper from "./photo-cropper";
 import { img, videoPoster } from "@/lib/media";
+import { heading, input, label, panel } from "../../ui";
 import { ArrowLeft, ArrowRight, Close, Plus } from "../../../components/icons";
 import {
   FUEL_TYPES,
@@ -17,12 +18,6 @@ import {
   type Media,
 } from "@/lib/types";
 
-const input =
-  "w-full bg-[#0a0f12] border border-[#23292d] px-4 py-3.5 text-[15px] text-white placeholder:text-gray-400 focus:border-[#E43E3D] transition-[border-color] duration-200";
-const label =
-  "text-gray-400 text-[11px] font-bold uppercase tracking-[0.18em] mb-2.5 block";
-const panel = "bg-[#0e1316] border border-[#1b2126] p-6 sm:p-8";
-const heading = "text-white font-bold text-[15px] mb-6";
 
 export default function CarForm({ car }: { car: Car | null }) {
   const [state, formAction, pending] = useActionState<SaveState, FormData>(

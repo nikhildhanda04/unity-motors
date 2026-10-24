@@ -1,11 +1,13 @@
 import { MetadataRoute } from 'next'
 import { getCars } from '@/lib/cars'
+import { getProducts } from '@/lib/products'
 
 const SITE = 'https://unitymotor.in'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Never let a blob/network hiccup fail the whole sitemap build.
   const cars = await getCars().catch(() => [])
+  const products = await getProducts().catch(() => [])
 
   const carUrls: MetadataRoute.Sitemap = cars
     .filter((c) => !c.sold)
@@ -15,6 +17,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly',
       priority: 0.7,
     }))
+
+  const productUrls: MetadataRoute.Sitemap = products.map((p) => ({
+    url: `${SITE}/store/${p.slug}`,
+    lastModified: new Date(p.createdAt),
+    changeFrequency: 'weekly',
+    priority: 0.6,
+  }))
 
   return [
     {
@@ -53,6 +62,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'yearly',
       priority: 0.8,
     },
+    {
+      url: `${SITE}/store`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.8,
+    },
     ...carUrls,
+    ...productUrls,
   ]
 }
