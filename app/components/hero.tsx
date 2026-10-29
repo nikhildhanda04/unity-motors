@@ -27,6 +27,9 @@ export const Hero = () => {
             <Link href="/cars" className="border border-white/30 hover:border-white hover:bg-white hover:text-black text-white font-bold py-3.5 sm:py-4 px-6 sm:px-8 rounded-full transition-colors uppercase tracking-wider text-xs sm:text-sm inline-block text-center">
               Cars For Sale
             </Link>
+            <Link href="/store" className="border border-white/30 hover:border-white hover:bg-white hover:text-black text-white font-bold py-3.5 sm:py-4 px-6 sm:px-8 rounded-full transition-colors uppercase tracking-wider text-xs sm:text-sm inline-block text-center">
+              Parts Store
+            </Link>
           </div>
         </div>
 
